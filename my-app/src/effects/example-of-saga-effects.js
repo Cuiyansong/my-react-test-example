@@ -1,4 +1,4 @@
-import {put, call} from 'redux-saga/effects';
+import {put, call, select} from 'redux-saga/effects';
 import axios from 'axios';
 
 export const verifyColor = color => {
@@ -14,6 +14,8 @@ export function* changeColor(action) {
     });
 }
 
+export const getCarReducer = state => state.color;
+
 export function* verifyAndChangeColor(action) {
     let color = action.color;
     const response = yield call(verifyColor, color);
@@ -23,5 +25,14 @@ export function* verifyAndChangeColor(action) {
     yield put({
         type: 'CHANGE_COLOR_ACTION',
         color
+    });
+}
+
+export function* verifyColorFromStoreData() {
+    let color = yield select(getCarReducer);
+    const response = yield call(verifyColor, color);
+    yield put({
+        type: 'CHANGE_COLOR_ACTION',
+        color: response.color
     });
 }
