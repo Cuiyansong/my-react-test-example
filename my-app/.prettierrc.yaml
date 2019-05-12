@@ -1,0 +1,14 @@
+# Prettier configuration
+# https://prettier.io/docs/en/webstorm.html
+
+printWidth: 140
+singleQuote: true
+tabWidth: 2
+useTabs: false
+
+# js and ts rules:
+arrowParens: avoid
+
+# jsx and tsx rules:
+jsxBracketSameLine: false
+
