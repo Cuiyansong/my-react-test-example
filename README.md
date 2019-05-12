@@ -1,4 +1,5 @@
-# React Test Framework Study & Practise
+# React Test Framework Study & Practise 
+[![Build Status](https://travis-ci.com/Cuiyansong/my-react-test-example.svg?branch=master)](https://travis-ci.com/Cuiyansong/my-react-test-example)
 
 ## 不是这里讨论的问题 :anger:
 
