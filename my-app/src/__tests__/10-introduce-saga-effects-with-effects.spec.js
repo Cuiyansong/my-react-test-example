@@ -15,9 +15,11 @@ describe('with saga effects within effects', () => {
         [call(verifyColor, threePrimaryColors[2].color), { isOK: true }],
         [call(verifyColor, threePrimaryColors[3].color), { isOK: false }]
       ])
-      .put({
-        type: 'CHANGE_COLOR_ACTION',
-        color: threePrimaryColors[0].color
+      .call.like({ fn: verifyColor })
+      .put.like({
+        action: {
+          type: 'CHANGE_COLOR_ACTION'
+        }
       })
       .put({
         type: 'CHANGE_COLOR_ACTION',
