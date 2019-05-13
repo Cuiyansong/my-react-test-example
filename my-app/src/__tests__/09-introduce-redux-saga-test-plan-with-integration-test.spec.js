@@ -1,8 +1,4 @@
-import {
-  verifyColorFromStoreData,
-  verifyColor,
-  getCarReducer
-} from '../effects/example-of-saga-effects';
+import { verifyColorFromStoreData, verifyColor, getCarReducer } from '../effects/example-of-saga-effects';
 import { expectSaga } from 'redux-saga-test-plan';
 import { call, select } from 'redux-saga/effects';
 

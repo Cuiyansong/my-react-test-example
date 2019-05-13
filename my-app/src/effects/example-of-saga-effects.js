@@ -1,9 +1,11 @@
-import { put, call, select } from 'redux-saga/effects';
+import { put, call, select, all } from 'redux-saga/effects';
 import axios from 'axios';
 
 export const verifyColor = color => {
   return axios.get(`/example-of-saga-test/colors/${color}/verify`);
 };
+
+export const getCarReducer = state => state.color;
 
 export function* changeColor(action) {
   const color = action.color;
@@ -13,8 +15,6 @@ export function* changeColor(action) {
     color
   });
 }
-
-export const getCarReducer = state => state.color;
 
 export function* verifyAndChangeColor(action) {
   let color = action.color;
@@ -35,4 +35,25 @@ export function* verifyColorFromStoreData() {
     type: 'CHANGE_COLOR_ACTION',
     color: response.color
   });
+}
+
+export function* verifyThreePrimaryColor(action) {
+  let color = action.color;
+  const response = yield call(verifyColor, color);
+  if (!response.isOK) {
+    return;
+  }
+  yield put({
+    type: 'CHANGE_COLOR_ACTION',
+    color
+  });
+}
+
+export function* verifySelectedColors(action) {
+  const colors = action.colors;
+
+  yield verifyThreePrimaryColor(colors[0]);
+  yield verifyThreePrimaryColor(colors[1]);
+  yield verifyThreePrimaryColor(colors[2]);
+  yield verifyThreePrimaryColor(colors[3]);
 }
