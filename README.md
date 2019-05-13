@@ -54,12 +54,7 @@ collect test results           --- 收集测试结果，可进行代码覆盖率
 ### 流行的测试框架
 1. JestJS, Facebook 出品，集成了 expect 断言库，React 标配
 2. KarmaJS, AngularJS 团队推荐，不是一个大而全的框架，可以自由集成 Mocha、Jasmine、QUnit 等插件
-3. MochaJS, 基于NodeJS的库
-4. ChaiJS, 基于node的BDD或TDD测试框架, 例如bc.should.equal('a') or expect(foo).to.have.lengthOf(3)
-
-### 非主流测试框架
-1. GruntJS - 
-2. GulpJS - 
+3. MochaJS, 基于NodeJS的框架
 
 ## 02. Jest API 介绍 
 ```javascript
