@@ -56,4 +56,6 @@ export function* verifySelectedColors(action) {
   yield verifyThreePrimaryColor(colors[1]);
   yield verifyThreePrimaryColor(colors[2]);
   yield verifyThreePrimaryColor(colors[3]);
+
+  return 'hello world';
 }

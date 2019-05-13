@@ -33,6 +33,7 @@ describe('with saga effects within effects', () => {
         type: 'CHANGE_COLOR_ACTION',
         color: threePrimaryColors[3].color
       })
+      .returns('hello world')
       .run();
   });
 });
