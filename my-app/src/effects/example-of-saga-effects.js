@@ -52,10 +52,11 @@ export function* verifyThreePrimaryColor(action) {
 export function* verifySelectedColors(action) {
   const colors = action.colors;
 
-  yield verifyThreePrimaryColor(colors[0]);
-  yield verifyThreePrimaryColor(colors[1]);
-  yield verifyThreePrimaryColor(colors[2]);
-  yield verifyThreePrimaryColor(colors[3]);
+  yield all(
+    colors.map(function*(c) {
+      return yield verifyThreePrimaryColor(c);
+    })
+  );
 
   return 'hello world';
 }
