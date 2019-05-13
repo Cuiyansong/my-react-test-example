@@ -374,4 +374,8 @@ describe('Example of Saga Effect Test', () => {
 [Integration Test](https://github.com/Cuiyansong/my-react-test-example/commit/e3a40053fade5e2c146e6a093526d8e0df56bb01)
 
 ## 08. 复杂一些的Saga Effects测试
+[Effect with Effects](https://github.com/Cuiyansong/my-react-test-example/commit/58a7906eb3ace801998ae55323aa0bc409756a26)
+[Test Matcher](https://github.com/Cuiyansong/my-react-test-example/commit/3a1d63f863232322f197b2cb40370b12c1dcdc33)
+[Effect with Returned Value](https://github.com/Cuiyansong/my-react-test-example/commit/a2df1f92f75da037f46b8dd879ad3b512f65b1e9)
+[Another Way to Test](https://github.com/Cuiyansong/my-react-test-example/commit/4633cd79124b3222682a34985516eb4602851514)
 
