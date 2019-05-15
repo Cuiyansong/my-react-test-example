@@ -730,6 +730,9 @@ describe('with saga effects within effects', () => {
 [Another Way to Test](https://github.com/Cuiyansong/my-react-test-example/commit/4633cd79124b3222682a34985516eb4602851514)
 
 ## 问题 & 讨论
-TOBE UPDATE
+1. expectSaga中的put验证是否保证顺序以及数量
+2. Redux-Saga的作用和实践
+3. 为啥testSaga不需要加return而expectSaga需要
+4. dva集成Saga都封装了哪些概念
 
 
