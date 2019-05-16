@@ -42,4 +42,32 @@ describe('with saga effects within effects', () => {
         );
       });
   });
+
+  it('should verify colors with saga effects with less assertions and not guarantee sequence', () => {
+    const threePrimaryColors = ['Red', 'Blue', 'Green', 'Yellow'].map(c => {
+      return { color: c };
+    });
+    return expectSaga(verifySelectedColors, { colors: threePrimaryColors })
+      .provide([
+        [call(verifyColor, threePrimaryColors[0].color), { isOK: true }],
+        [call(verifyColor, threePrimaryColors[1].color), { isOK: true }],
+        [call(verifyColor, threePrimaryColors[2].color), { isOK: true }],
+        [call(verifyColor, threePrimaryColors[3].color), { isOK: false }]
+      ])
+      .call.like({ fn: verifyColor })
+      .put({
+        type: 'CHANGE_COLOR_ACTION',
+        color: threePrimaryColors[2].color
+      })
+      .put({
+        type: 'CHANGE_COLOR_ACTION',
+        color: threePrimaryColors[1].color
+      })
+      .not.put({
+        type: 'CHANGE_COLOR_ACTION',
+        color: threePrimaryColors[3].color
+      })
+      .returns('hello world')
+      .run();
+  });
 });

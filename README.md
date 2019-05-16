@@ -731,6 +731,7 @@ describe('with saga effects within effects', () => {
 
 ## 问题 & 讨论
 1. expectSaga中的put验证是否保证顺序以及数量
+![Solution](my-app/src/static/expect-saga-not-guarantee-sequence.png "")
 2. Redux-Saga的作用和实践
 3. 为啥testSaga不需要加return而expectSaga需要
 4. dva集成Saga都封装了哪些概念
